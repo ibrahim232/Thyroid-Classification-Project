@@ -91,12 +91,34 @@ elif select_page == 'Model Classification':
 
         # Make prediction
         result = pipeline.predict(df)[0]
+        
         if result == 0:
             st.success("The patient is euthyroid.")
+            st.info("""
+                **Health Advice for Euthyroid Individuals:**
+                - Maintain a balanced diet rich in iodine, selenium, and zinc to support thyroid function.
+                - Regular exercise can help maintain a healthy weight and overall well-being.
+                - Avoid exposure to environmental toxins and chemicals that can disrupt thyroid function.
+                - Regularly monitor your thyroid function, especially if you have a family history of thyroid disorders.
+                """)
         elif result == 1:
             st.warning('The patient has compensated hypothyroid.')
+            st.info("""
+                **Health Advice for Individuals with Compensated Hypothyroidism:**
+                - Consider a consultation with an endocrinologist for potential thyroid hormone therapy.
+                - A diet rich in antioxidants and selenium can support thyroid health.
+                - Regular exercise is beneficial but avoid over-exertion which may stress the thyroid.
+                - Monitor your symptoms and thyroid hormone levels closely as per your doctor's advice.
+                """)
         else:
             st.error('The patient has primary hypothyroid.')
+            st.info("""
+                **Health Advice for Individuals with Primary Hypothyroidism:**
+                - Thyroid hormone replacement therapy is typically required; follow your doctor's prescriptions.
+                - A well-balanced diet, avoiding soy and cruciferous vegetables that may interfere with thyroid function.
+                - Regular physical activity can help manage symptoms and improve energy levels.
+                - Stay informed about your condition and communicate regularly with your healthcare provider.
+                """)
             
 elif select_page == 'About':
     st.title('About Thyroid Disease Classification')
