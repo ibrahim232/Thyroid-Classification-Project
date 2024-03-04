@@ -92,7 +92,7 @@ You will enter the parameters and get the prediction.
 - Seaborn
 - Scikit-Learn
 - Plotly
-- SciPy
+
 
 ## Author
 
